@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "CircularStd-Bold", "ProximaNova-Regular";
+    src: url(assets/fonts/CircularStd-Bold.ttf);
+    src: url(assets/fonts/ProximaNova-Regular.ttf);
+}
+
+
+h1{
+    font-family: "CircularStd-Bold";
+    font-size : 70px;
+    color: #464646;
+    margin-bottom: 35px;
+    display: inline-block;
+}
+
+h2{
+    font-family: "CircularStd-Bold";
+    font-size :30px;
+    color: #464646;
+    margin-bottom: 35px;
+}
+
+p{
+    font-family: "ProximaNova-Regular";
+    font-size: 23px;
+    line-height: 1.6em;
+    color: #464646;
+    margin-bottom: 35px;
+
+}
+
+button{
+    font-family: "ProximaNova-Regular";
+    font-size: 23px;
+    color: #5BA0D9;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: transparent;
+    border: 4px #5BA0D9 solid;
+    margin-right: 35px;
+
+}
+
+button:hover{
+    background-color: #5BA0D9;
+    color: white;
+}
+.navbar {
+    background-color: transparent important;
+}
+
+.container-fluid{
+    background-color: #FAFAFA;
+}
+.text-description {
+    margin-top: 150px;
+    padding-left: 40px;
+    background-color: #FAFAFA;
+}
+
+.footer{
+    background-color: #4EA7F1;
+    color: white;
+}
+
+.underline--magical {
+    background-image: #5BA0D9;
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+}
+
+.underline--magical:hover {
+     background-size: 100% 88%;
+ }
+
+
+@keyframes fade {
+    From {
+        Opacity : 0;
+    }
+    To {
+        Opacity : 1;
+    }
+}
+
+.image_description {
+    Animation-name : fade ;
+    Animation-duration : 10s;
+}

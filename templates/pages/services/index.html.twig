@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block body  %}
+<div class="container-fluid">
+    <div class="wrapper-sofra row">
+        <div class="text description mt-auto col-xs-12 col-lg-6">
+            <h1 class="underline--magical"1>SOFRA</h1>
+            <h2>Société Française de Recouvrement Atlantique
+                Société de Recouvrement de créances</h2>
+            <p>SOFRA accompagne les professionnels en proposant des solutions complètes et personnalisées pour la gestion globale du poste client que ce soit en marque blanche dès l’identification de l’impayé ou pour des opérations commerciales, pour la négociation de vos créances suite à vos actions de relances internes ou pour le retraitement des pertes.</p>
+            <p>Nous apportons une analyse de votre process existant et intervenons en fonction ou à l’étape que vous souhaitez.</p>
+            <a href="">
+                <button class="float-right align-middle rounded-pill" name="button" type="button" class="button-style">En savoir plus</button>
+            </a>
+        </div>
+        <div class ="image-description col-xs-12 col-lg-6">
+                <img class ="sofra_recouvrement_creances_img center" src="assets/images/prestation1.svg" alt="">
+        </div>
+    </div>
+    <div class="wrapper-sni row">
+        <div class=" image-description col-xs-12 col-lg-6">
+            <img class="sni_img" src="{{ asset('/assets/images/enquete_civile_img.svg') }}" alt="" >
+        </div>
+        <div class="text description col-xs-12 col-lg-6">
+            <h1><span class="underline--magical">SNI</span> – Société Nantaise d’Investigations</h1>
+            <h2>Société d’enquêtes privées</h2>
+            <p>SNI est une société d’enquêtes privées spécialisée dans la recherche d’adresse, localisation de débiteurs, recherche de situation professionnelle, solvabilité, recherche de bénéficiaires, héritiers etc…</p>
+            <p>Grâce aux investigations de ses enquêteurs civils agrées, SNI met à votre disposition une gamme de prestations adaptées à vos besoins, de la recherche la plus simple à l’enquête la plus élaborée, que ce soit de manière ponctuelle ou régulière.</p>
+            <a href="">
+                <button class="float-right align-middle rounded-pill" name="button" type="button" class="button-style">Visitez le site</button>
+            </a>
+        </div>
+    </div>
+    <div class="wrapper-tda row">
+        <div class="text description tda col-xs-12 col-lg-6">
+            <h1 class="underline--magical"1>TDA SERVICES</h1>
+            <h2>Société de gestion et de traitement des PND</h2>
+            <h3>TDA SERVICES est le spécialiste des solutions de traitement de données clients.</h3>
+            <p>Nous proposons à nos clients des process personnalisés et des solutions innovantes pour la gestion des plis non-distribués (PND ex-NPAI), permettant d’accélérer le processus de détection et de correction des adresses défectueuses ainsi que la relocalisation de clients :</p>
+            <ul>
+                <li>Prise en compte des plis physiques ou dématérialisés</li>
+                <li>Analyse, comptables, gestion des doublons</li>
+                <li>Traitement RNVP, fiabilisation de données, normalisation d’adresses</li>
+                <li>Recherche des nouvelles adresses, mise en conformité de votre base, gestion de la déshérence.</li>
+                <li>Enrichissement base client (état civil, téléphone, mail etc…)</li>
+            </ul>
+            <a href="">
+                <button class="float-right align-middle rounded-pill" name="button" type="button" class="button-style">En savoir plus</button>
+            </a>
+        </div>
+        <div class ="image-description col-xs-12 col-lg-6">
+            <img class ="tda_img " src="assets/images/gestion_traitement_pnd_img.svg" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

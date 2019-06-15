@@ -1,0 +1,32 @@
+.sofra_recouvrement_creances_img {
+    width: 85%;
+    transform: rotate(10deg);
+}
+
+.sni_img{
+    width: 85%;
+}
+
+.tda_img{
+    width: 90%;
+}
+.wrapper-sofra{
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+.wrapper-tda{
+    padding-top: 45px;
+    padding-bottom: 45px;
+    background-color: #E5F3FE;
+}
+
+.wrapper-sni{
+    padding-top: 45px;
+    padding-bottom: 45px;
+    background-color: #FFFFFF;
+}
+.text-description_tda {
+    margin-top: 150px;
+    padding-left: 40px;
+    background-color: #E5F3FE;
+}
