@@ -1,18 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-
         <div class="row flex">
             {% for news in results %}
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-tittle">
-                                <h2>{{ news.title }}</h2>
+                                <a href="{{ path('news.show', {id: news.id, slug: news.slug}) }}">{{ news.title }}</a>
                             </div>
                             <div class="card-text">
                                 <p>{{ news.description }}</p>
                                 <p>{{ news.author }}</p>
-                                
+
                             </div>
 
                         </div>

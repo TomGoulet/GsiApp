@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title 'Gérer les actualités' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Gérer les actualités</h1>
+        <table class="table table-striped">
+            <thread>
+                <tr>
+                    <th>Titre</th>
+                    <th>Actions</th>
+                </tr>
+            </thread>
+            <body>
+            {% for news in results %}
+            <tr>
+                <td>{{ news.title }}</td>
+                <td>
+                    <a href="{{ path('admin.news.edit', {id: news.id}) }}" class="btn btn-secondary">Editer</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </body>
+        </table>
+    </div>
+{% endblock %}

@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
 
+
 /**
  * Class NewsController
  * @package App\Controller
@@ -54,5 +55,23 @@ class NewsController extends AbstractController
         return $this->render('pages/news/index.html.twig', [
             'results' => $results]);
     }
-}
 
+
+    /**
+     * @Route("/Actualités/{slug}-{id}", name="news.show", requirements={"slug": "[a-z0-9\-]*"})
+     * @param News $news
+     * @return Response
+     */
+    public function show(News $news, string $slug): Response
+    {
+        if ($news->getSlug() !== $slug) {
+            $this->redirectToRoute('news.show', [
+                'news' => $news->getId()
+            ],  301);
+        }
+        return $this->render('pages/news/show.html.twig', [
+            'news' => $news
+        ]);
+    }
+
+}
