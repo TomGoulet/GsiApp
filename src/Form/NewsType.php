@@ -12,10 +12,14 @@ class NewsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
+            ->add('title', null,[
+                'label' => 'Titre'
+            ])
             ->add('description')
-            ->add('author')
-            ->add('created_at')
+            ->add('author', null,[
+                'label' => 'Auteur'
+            ])
+            ->add('date')
         ;
     }
 
@@ -23,6 +27,7 @@ class NewsType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => News::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }

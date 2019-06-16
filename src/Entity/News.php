@@ -33,14 +33,10 @@ class News
     private $author;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $created_at;
+    private $date;
 
-    public function __construct()
-    {
-        $this->created_at = new \DateTime();
-    }
 
     public function getId(): ?int
     {
@@ -88,14 +84,14 @@ class News
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
-        return $this->created_at;
+        return $this->date;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setDate(?\DateTimeInterface $date): self
     {
-        $this->created_at = $created_at;
+        $this->date = $date;
 
         return $this;
     }
