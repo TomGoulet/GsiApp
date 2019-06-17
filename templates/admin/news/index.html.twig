@@ -4,6 +4,12 @@
 {% block body %}
     <div class="container-fluid">
         <h1>Gérer les actualités</h1>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
         <table class="table table-striped">
             <thread>
                 <tr>
@@ -17,11 +23,17 @@
                 <td>{{ news.title }}</td>
                 <td>
                     <a href="{{ path('admin.news.edit', {id: news.id}) }}" class="btn btn-secondary">Editer</a>
+                    <form method="post" action="{{ path('admin.news.delete', {id: news.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous sur de vouloir supprimer cet article ?')">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ news.id) }}">
+                        <button class="btn btn-danger">Supprimer</button>
+                    </form>
                 </td>
             </tr>
             {% endfor %}
             </body>
         </table>
+
         <div class="text-right">
             <a href="{{ path('admin.news.new') }}" class="btn btn-primary">Créer un nouvel article</a>
         </div>

@@ -11,7 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-
+/**
+ * Class AdminNewsController
+ * @package App\Controller\admin
+ */
 class AdminNewsController extends AbstractController
 {
     /**
@@ -26,6 +29,11 @@ class AdminNewsController extends AbstractController
 
     private $em;
 
+    /**
+     * AdminNewsController constructor.
+     * @param NewsRepository $repository
+     * @param ObjectManager $em
+     */
     public function  __construct(NewsRepository $repository, ObjectManager $em)
     {
         $this->repository = $repository;
@@ -55,6 +63,7 @@ class AdminNewsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->persist($news);
             $this->em->flush();
+            $this->addFlash('success', 'Article crée avec succès');
             return $this->redirectToRoute( 'admin.news.index');
         }
 
@@ -65,7 +74,7 @@ class AdminNewsController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}", name="admin.news.edit")
+     * @Route("/admin/news/{id}", name="admin.news.edit")
      * @param News $news
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -78,6 +87,7 @@ class AdminNewsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->flush();
+            $this->addFlash('success', 'Article modifié avec succès');
             return $this->redirectToRoute( 'admin.news.index');
         }
 
@@ -86,4 +96,21 @@ class AdminNewsController extends AbstractController
             'form' => $form->createView()
             ]);
     }
+
+    /**
+     * @Route("/admin/news/{id}", name="admin.news.delete", methods="DELETE")
+     * @param News $news
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function delete(News $news, Request $request)
+    {
+        if ($this->isCsrfTokenValid('delete' . $news->getId(), $request->get(_token))) {
+            $this->em->remove($news);
+            $this->em->flush();
+
+            return $this->redirectToRoute('admin.news.index');
+        }
+    }
+
 }

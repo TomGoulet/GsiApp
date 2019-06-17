@@ -4,8 +4,8 @@ doctrine:
         # configure these for your database server
         driver: 'pdo_pgsql'
         charset: utf8
-        user : thomasgoulet
-        password :
+        user: thomasgoulet
+
 
 
         url: '%env(resolve:DATABASE_URL)%'
